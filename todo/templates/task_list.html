@@ -1,0 +1,12 @@
+<h1>Tasks</h1>
+<table border="1">
+{% for x in object_list %}
+<tr>
+<td>{{ x.created_at }}</td>
+<td>{{ x.updated_at }}</td>
+<td>{{ x.owner }}</td>
+<td>{{ x.is_completed }}</td>
+<td>{{ x.title }}</td>
+</tr>
+{% endfor %}
+</table>

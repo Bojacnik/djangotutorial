@@ -1,0 +1,13 @@
+<h1>Users</h1>
+
+<table border="1">
+{% for x in mymembers %}
+<tr>
+<td>{{ x.created_at }}</td>
+<td>{{ x.updated_at }}</td>
+<td>{{ x.is_active }}</td>
+<td>{{ x.email }}</td>
+<td>{{ x.password }}</td>
+</tr>
+{% endfor %}
+</table>
