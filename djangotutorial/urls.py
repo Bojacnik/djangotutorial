@@ -15,7 +15,21 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from todo.views import UserCreateView, UserCreateView, UserListView, UserUpdateView, UserDeleteView, UserDetailView
+from todo.views import TaskListView, TaskCreateView, TaskUpdateView, TaskDeleteView, TaskDetailView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+
+    path('users/', UserListView.as_view(), name="users-list"),
+    path('users/create', UserCreateView.as_view(), name="user-create"),
+    path('users/<int:pk>', UserDetailView.as_view(), name="user-detail"),  # should not end with detail, cuz standards or something
+    path('users/<int:pk>/update', UserUpdateView.as_view(), name="user-update"),
+    path('users/<int:pk>/delete', UserDeleteView.as_view(), name="user-delete"),
+
+    path('tasks/', TaskListView.as_view(), name="tasks-list"),
+    path('tasks/create', TaskCreateView.as_view()),
+    path('tasks/<int:pk>', TaskDetailView.as_view()),
+    path('tasks/<int:pk>/update', TaskUpdateView.as_view()),
+    path('tasks/<int:pk>/delete', TaskDeleteView.as_view())
 ]
