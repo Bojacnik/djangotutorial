@@ -1,7 +1,6 @@
 <h1>Users</h1>
-
 <table border="1">
-{% for x in mymembers %}
+{% for x in object_list %}
 <tr>
 <td>{{ x.created_at }}</td>
 <td>{{ x.updated_at }}</td>
@@ -9,5 +8,7 @@
 <td>{{ x.email }}</td>
 <td>{{ x.password }}</td>
 </tr>
+    {% empty %}
+    <tr><td>empty</td></tr>
 {% endfor %}
 </table>

@@ -1,12 +1,13 @@
 <h1>Tasks</h1>
 <table border="1">
-{% for x in object_list %}
+{% for task in object_list %}
 <tr>
-<td>{{ x.created_at }}</td>
-<td>{{ x.updated_at }}</td>
-<td>{{ x.owner }}</td>
-<td>{{ x.is_completed }}</td>
-<td>{{ x.title }}</td>
+<td>{{ task.id }}</td>
+<td>{{ task.created_at }}</td>
+<td>{{ task.updated_at|default:"N/A " }}</td>
+<td>{{ task.is_completed }}</td>
+<td>{{ task.owner }}</td>
+<td>{{ task.title }}</td>
 </tr>
 {% endfor %}
 </table>
